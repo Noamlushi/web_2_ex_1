@@ -1,3 +1,4 @@
-ex 1 
+ex 1
+
 Noam Lushi  
 Hadar Basson
