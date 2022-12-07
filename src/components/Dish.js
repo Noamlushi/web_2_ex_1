@@ -25,6 +25,8 @@ function Dish(props) {
         <p></p>
 
         <h1 className="expense-item__price">{props.price + "₪"}</h1>
+        <p></p>
+        <button>Buy Now</button>
       </div>
 
       {/* <div className='expense-item__price'>${props.amount}</div> */}
