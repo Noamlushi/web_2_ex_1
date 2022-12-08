@@ -12,5 +12,18 @@
 	
 }
 
+.cart{
+	line-height: 12px;
+	margin-top: 1px;
+	margin-right: 25px;
+	position:absolute;
+	top:0;
+	right:0;
+	width: 55px;
+	position: fixed;
 
 
+}
+.cart:hover{
+	transform: translateY(2px);
+}

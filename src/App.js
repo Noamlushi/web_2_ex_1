@@ -59,6 +59,12 @@ function App() {
 
   return (
     <div>
+      <img
+        className="cart"
+        src="https://cdn-icons-png.flaticon.com/512/7852/7852408.png"
+        alt=""
+      />
+
       <div className="title">
         <h1>React Restaurant</h1>
       </div>
