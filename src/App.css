@@ -3,7 +3,7 @@
 
 .title h1 {
 	font-family: 'Bebas Neue', cursive;
-	display: inline-block;
+	/* display: inline-block; */
 	font-size: 60px;
 	color: #344055;
   text-align:center;

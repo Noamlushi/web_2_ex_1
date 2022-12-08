@@ -17,10 +17,11 @@ background: #DFC2F2;
 	overflow: hidden;
 	margin: 5em auto;
 	height: 350px;
-	width: 900px;
+	width: 800px;
   
 	
 }
+
 
 
 
@@ -67,9 +68,6 @@ background: #DFC2F2;
 
 	
 
-
-
-
 #container .product-details > p {
 font-family: 'EB Garamond', serif;
 	text-align: center;
@@ -100,9 +98,42 @@ font-family: 'EB Garamond', serif;
 	
 }
 
+.btn:hover{transform: translateY(-6px);
+	background: #1a66ff;}
 
+.btn span {
+	font-family: 'Farsan', cursive;
+	transition: transform 0.3s;
+	display: inline-block;
+  padding: 10px 20px;
+	font-size: 1.2em;
+	margin:0;
+	
+}
+.btn .price, .shopping-cart{
+	background: #333;
+	border: 0;
+	margin: 0;
+}
 
+.btn .price {
+	transform: translateX(-10%); padding-right: 15px;
+}
 
+.btn .shopping-cart {
+	transform: translateX(-100%);
+  position: absolute;
+	background: #333;
+	z-index: 1;
+  left: 0;
+  top: 0;
+}
+
+.btn .buy {z-index: 3; font-weight: bolder;}
+
+.btn:hover .price {transform: translateX(-110%);}
+
+.btn:hover .shopping-cart {transform: translateX(0%);}
 
 
 
@@ -128,6 +159,7 @@ font-family: 'EB Garamond', serif;
     line-height: 1.8;
     text-align: left;
     font-size: 105%;
+    cursor: no-drop;
     color: #FFF;
     height: 100%;
     width: 100%;
@@ -139,7 +171,7 @@ font-family: 'EB Garamond', serif;
 .product-image:hover .info{transform: translateX(0);}
 
 .info ul li{transition: 0.3s ease;}
-.info ul li:hover{transform: translateX(1px) scale(1);}
+.info ul li:hover{transform: translateX(1px) scale(1.02);}
 
 .product-image:hover img {transition: all 0.3s ease-out;}
 .product-image:hover img {transform: scale(1.2, 1.2);}

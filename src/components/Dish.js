@@ -1,4 +1,8 @@
 import "./Dish.css";
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+></link>;
 
 function Dish(props) {
   return (
@@ -20,13 +24,22 @@ function Dish(props) {
         </div>
       </div>
 
-      <div class="product-details">
+      <div className="product-details">
         <h1>{props.name}</h1>
+        <div className="control">
+          <button className="btn">
+            {/* <span className="price">{props.price + "₪"}</span> */}
+            {/* <span className="shopping-cart"> */}
+            {/* <i className="fa fa-shopping-cart" aria-hidden="true"></i> */}
+            {/* </span> */}
+            <span className="buy">Add to cart</span>
+          </button>
+        </div>
         <p></p>
 
         <h1 className="expense-item__price">{props.price + "₪"}</h1>
         <p></p>
-        <button>Buy Now</button>
+        {/* <button>Buy Now</button> */}
       </div>
 
       {/* <div className='expense-item__price'>${props.amount}</div> */}
