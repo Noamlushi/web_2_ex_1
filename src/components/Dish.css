@@ -159,7 +159,7 @@ font-family: 'EB Garamond', serif;
     line-height: 1.8;
     text-align: left;
     font-size: 105%;
-    cursor: no-drop;
+    /* cursor: no-drop; */
     color: #FFF;
     height: 100%;
     width: 100%;

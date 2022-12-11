@@ -1,7 +1,10 @@
 import "./App.css";
 import Dishes from "./components/Dishes";
+import Cart from "./components/cart/Cart";
+import React, { useState } from "react";
 
 function App() {
+  const [isClickCart, setIsClickCart] = useState(0);
   const dishes = [
     {
       id: "d1",
@@ -57,14 +60,19 @@ function App() {
     },
   ];
 
+  const openCart = () => {
+    setIsClickCart(!isClickCart);
+  };
+
   return (
     <div>
       <img
         className="cart"
         src="https://cdn-icons-png.flaticon.com/512/7852/7852408.png"
         alt=""
+        onClick={openCart}
       />
-
+      {isClickCart && <Cart></Cart>}
       <div className="title">
         <h1>React Restaurant</h1>
       </div>
