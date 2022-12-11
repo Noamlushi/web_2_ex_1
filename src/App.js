@@ -1,9 +1,24 @@
 import "./App.css";
 import Dishes from "./components/Dishes";
 import Cart from "./components/cart/Cart";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 
 function App() {
+
+const[backendData,setBackendData]=useState([{}])  
+useEffect(()=>{
+ fetch("/api").then(
+  response=>response.json()
+ ).then(
+  data => { 
+    setBackendData(data)
+  }
+ ) 
+},[])
+
+
+
+
   const [isClickCart, setIsClickCart] = useState(0);
   const dishes = [
     {
@@ -66,6 +81,7 @@ function App() {
 
   return (
     <div>
+
       <img
         className="cart"
         src="https://cdn-icons-png.flaticon.com/512/7852/7852408.png"
