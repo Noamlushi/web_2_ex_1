@@ -1,0 +1,32 @@
+.containerCartItem{
+	background: rgb(231, 223, 223);
+	text-align: center;
+	border-radius: 25px;
+	overflow: hidden;
+	margin: 2em ;
+	height: 150px;
+	width: 600px;
+}
+
+
+.product-image-cart {
+	transition: all 0.3s ease-out;
+	position: relative;
+    top: 10%;
+    left: 20px;
+	overflow: hidden;
+	height: 80%;
+	float: left;
+	width: 30%;
+	display: inline-block;
+    border-radius: 25px;
+
+}
+
+.product-details-cart{	font-family: 'Bebas Neue', cursive;
+	display: inline-block;
+	position: relative;
+	font-size: 15px;
+	color: #344055;
+	margin: 0;
+	}
