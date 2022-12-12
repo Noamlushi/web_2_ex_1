@@ -3,8 +3,16 @@ import "./Dish.css";
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 ></link>;
+// import React, {useState} from "react";
 
 function Dish(props) {
+ 
+
+const addToCart=()=>{
+  console.log(props.id)
+}
+
+
   return (
     <div id="container">
       <div className="product-image">
@@ -27,7 +35,7 @@ function Dish(props) {
       <div className="product-details">
         <h1>{props.name}</h1>
         <div className="control">
-          <button className="btn">
+          <button className="btn" onClick={addToCart}>
             {/* <span className="price">{props.price + "₪"}</span> */}
             {/* <span className="shopping-cart"> */}
             {/* <i className="fa fa-shopping-cart" aria-hidden="true"></i> */}
