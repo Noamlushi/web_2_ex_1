@@ -6,6 +6,8 @@ import React, { useState,useEffect } from "react";
 function App() {
 
 const[backendData,setBackendData]=useState([{}])  
+ 
+ 
 useEffect(()=>{
  fetch("/alldishes").then(
   response=>response.json()
@@ -23,6 +25,10 @@ useEffect(()=>{
     setIsClickCart(!isClickCart);
   };
 
+  const renderCart=()=>{
+    setIsClickCart(0)
+  }
+
   return (
     <div>
 
@@ -32,14 +38,14 @@ useEffect(()=>{
         alt=""
         onClick={openCart}
       />
-      {isClickCart && <Cart></Cart>}
+      { isClickCart  && <Cart></Cart>}
       <div className="title">
         <h1>React Restaurant</h1>
       </div>
       {
         backendData.map((dish,index)=>{
           return <Dish key={index} name={dish.Name} weight={dish.Weight} 
-          price={dish.Price} imgUrl={dish.URL} description={dish.Description} id={dish._id}
+          price={dish.Price} imgUrl={dish.URL} description={dish.Description} id={dish._id} onAddCart={renderCart}
           />
         })
       }

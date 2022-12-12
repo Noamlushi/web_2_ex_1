@@ -8,8 +8,22 @@ import "./Dish.css";
 function Dish(props) {
  
 
+
+
 const addToCart=()=>{
-  console.log(props.id)
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ id: props.id,
+    name:props.name,
+    price:props.price,
+    imgUrl:props.imgUrl
+    })
+};
+
+fetch('/addToCart', requestOptions)
+        .then(response => response.json());
+         props.onAddCart()
 }
 
 
