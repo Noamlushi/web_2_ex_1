@@ -39,7 +39,7 @@ useEffect(()=>{
       {
         backendData.map((dish,index)=>{
           return <Dish key={index} name={dish.Name} weight={dish.Weight} 
-          price={dish.Price} imgUrl={dish.URL} description={dish.Description}
+          price={dish.Price} imgUrl={dish.URL} description={dish.Description} id={dish._id}
           />
         })
       }

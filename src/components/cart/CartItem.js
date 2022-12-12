@@ -6,11 +6,11 @@ const CartItem = (props) => {
         <img
           className="product-image-cart"
           alt=""
-          src="https://www.sosyncd.com/wp-content/uploads/2022/03/33.png"
+          src={props.imgUrl}
         ></img>
         <div className="product-details-cart">
-          <h1>SpongBob</h1>
-          <h1 className="expense-item__price">50$</h1>
+          <h1>{props.name}</h1>
+          <h1 className="expense-item__price">{props.price + "₪"}</h1>
         </div>
       </div>
     </div>
