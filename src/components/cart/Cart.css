@@ -10,8 +10,9 @@
 	overflow: hidden;
 	margin: 5em auto;
 	width: 1250px;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
+
   
 	
 }

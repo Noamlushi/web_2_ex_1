@@ -1,0 +1,69 @@
+.containerCartDetails{
+	background: rgb(231, 223, 223);
+	text-align: center;
+	border-radius: 25px;
+    transition: all 0.3s ease-out;
+	position: relative;
+	overflow: hidden;
+	height: 60%;
+	float: right;
+    margin-right:60px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+
+	width: 45%;
+	display: block;
+    flex-direction: column;
+
+	height: 500px;
+	width: 400px;
+}
+
+label{
+
+    transform-origin: left center;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    font-size: 17px;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    display: block;
+    position: absolute;
+    margin-top: -40px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+input{
+
+
+    appearance: none;
+    background-color: rgb(249, 255, 191);
+    border: 1px solid ;
+    text-align: center;
+    line-height: 0;
+    font-size: 17px;
+    width: 80%;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 60px;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    /* z-index: 1; */
+    margin-left:4px;
+    margin-top: 10px;
+
+}
+
+
+
+
+.question{
+
+    position: relative;
+padding: 10px 0;
+}
+
+
