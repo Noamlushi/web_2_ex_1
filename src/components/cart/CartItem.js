@@ -4,11 +4,14 @@ const CartItem = (props) => {
     <div>
       <div className="containerCartItem">
         <img className="product-image-cart" alt="" src={props.imgUrl}></img>
-        <div className="product-details-cart">
+        <div className="item_name">
           <h1>{props.name}</h1>
         </div>
+        <div className="quantity">
+          <h1 className="quantity">X1</h1>
+        </div>
 
-        <div className="product-details-cart">
+        <div className="price_item">
           <h1 className="expense-item__price">{props.price + "₪"}</h1>
         </div>
       </div>
