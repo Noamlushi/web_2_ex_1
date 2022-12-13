@@ -21,6 +21,7 @@ const DetailsCart = (props) => {
             <input type="text" defaultValue={phone} required />
           </div>
         </form>
+
         <h1>total price: {} ₪</h1>
         <button className="btn">
           <span className="buy">Buy Now</span>

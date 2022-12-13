@@ -8,7 +8,7 @@ const CartItem = (props) => {
           <h1>{props.name}</h1>
         </div>
         <div className="quantity">
-          <h1 className="quantity">X1</h1>
+          <h1 className="quantity">{"X" + " " + props.q}</h1>
         </div>
 
         <div className="price_item">
