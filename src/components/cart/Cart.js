@@ -31,6 +31,7 @@ const Cart = (props) => {
         firstN: savedData.firstN,
         lastN: savedData.lastN,
         phone: savedData.phone,
+        totalprice:total()
       }),
     };
 
