@@ -1,0 +1,14 @@
+.containerSummary{
+	box-shadow: 0px 0px 0px 4px rgb(4, 255, 0);
+	background: linear-gradient( to left, #ffffb3,#ffe6e6);;
+	text-align: center;
+	border-radius: 6px;
+	overflow: hidden;
+	margin: 5em auto;
+	width: 1250px;
+    /* display: flex; */
+    flex-direction: column;
+
+  
+	
+}
