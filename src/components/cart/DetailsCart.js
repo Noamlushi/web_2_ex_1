@@ -2,9 +2,6 @@ import "./DetailsCart.css";
 import React, { useState } from 'react';
 
 const DetailsCart = (props) => {
-  const firstN = "First Name";
-  const lastN = "Last Name";
-  const phone = "Phone Number";
 
   const [enteredFirstN, setEnteredFirstN] = useState('');
   const [enteredLastN, setEnteredLastN] = useState('');
@@ -27,6 +24,9 @@ const DetailsCart = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    console.log({enteredFirstN})
+    console.log({enteredLastN})
+    console.log({enteredPhone})
 
     const savedData = {
       firstN: enteredFirstN,
@@ -34,7 +34,8 @@ const DetailsCart = (props) => {
       phone: enteredPhone,
     };
 
-    // props.onSaveExpenseData(expenseData);
+    props.onSaveData(savedData);
+
     setEnteredFirstN('');
     setEnteredLastN('');
     setEnteredPhone('');
@@ -48,23 +49,23 @@ const DetailsCart = (props) => {
         <form>
           <div class="question">
             <label>First Name</label>
-            <input type="text" defaultValue={enteredFirstN} required />
+            <input type="text" value={enteredFirstN} required onChange={firstNChangeHandler}/>
           </div>
           <div class="question">
             <br></br>
             <label>Last Name</label>
-            <input type="text" defaultValue={enteredLastN} required />
+            <input type="text" value={enteredLastN} onChange={lastNChangeHandler} required />
           </div>
           <div class="question">
           <br></br>
             <label>Phon Number</label>
-            <input type="text" defaultValue={enteredPhone} required />
+            <input type="text" value={enteredPhone} onChange={phoneChangeHandler} required />
           </div>
         </form>
 
-        <h1>total price: {} ₪</h1>
+        <h1>total price: {props.totalprice} ₪</h1>
         <button type="submit" onClick={submitHandler} className="btn">
-          <span className="buy">Buy Now</span>
+          <span className="buy">Buy Now!!</span>
         </button>
       </div>
     </div>

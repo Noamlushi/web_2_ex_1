@@ -12,7 +12,7 @@ const CartItem = (props) => {
         </div>
 
         <div className="price_item">
-          <h1 className="expense-item__price">{props.price + "₪"}</h1>
+          <h1 className="expense-item__price">{props.price*props.q + "₪"}</h1>
         </div>
       </div>
     </div>
