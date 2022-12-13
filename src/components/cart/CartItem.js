@@ -10,10 +10,12 @@ const CartItem = (props) => {
         <div className="quantity">
           <h1 className="quantity">{"X " + props.q}</h1>
         </div>
-
         <div className="price_item">
           <h1 className="expense-item__price">{props.price * props.q + "₪"}</h1>
         </div>
+        <button className="delete-btn">
+          <span className="buy">delete </span>
+        </button>
       </div>
     </div>
   );

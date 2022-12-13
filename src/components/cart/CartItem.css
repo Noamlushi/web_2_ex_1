@@ -4,8 +4,8 @@
 	border-radius: 25px;
 	overflow: hidden;
 	margin: 2em ;
-	height: 150px;
-	width: 600px;
+	height: 205px;
+	width: 700px;
 
 }
 
@@ -40,6 +40,27 @@
 
     .quantity {
         float: right;
-        margin-right: 5px;
+        margin-right: 10px;
 
     }
+    .delete-btn{
+
+            transform: translateY(0px);
+            transition: 0.3s linear;
+            background:  rgb(240, 0, 0);
+            border-radius: 8px;
+            font-size: large;
+          position: relative;
+          /* overflow: hidden; */
+            cursor: pointer;
+            /* outline: none; */
+            float:right;
+            border: none;
+            color: #eee;
+            padding: 10;
+            margin-right: 15px;
+            margin-bottom: 100px;
+
+        
+    }
+    
