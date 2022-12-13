@@ -61,6 +61,7 @@ const DetailsCart = (props) => {
             <input type="text" defaultValue={enteredPhone} required />
           </div>
         </form>
+
         <h1>total price: {} ₪</h1>
         <button type="submit" onClick={submitHandler} className="btn">
           <span className="buy">Buy Now</span>

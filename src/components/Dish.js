@@ -6,26 +6,21 @@ import "./Dish.css";
 // import React, {useState} from "react";
 
 function Dish(props) {
- 
+  const addToCart = () => {
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id: props.id,
+        name: props.name,
+        price: props.price,
+        imgUrl: props.imgUrl,
+      }),
+    };
 
-
-
-const addToCart=()=>{
-  const requestOptions = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ id: props.id,
-    name:props.name,
-    price:props.price,
-    imgUrl:props.imgUrl
-    })
-};
-
-fetch('/addToCart', requestOptions)
-        .then(response => response.json());
-         props.onAddCart()
-}
-
+    fetch("/addToCart", requestOptions).then((response) => response.json());
+    props.onAddCart();
+  };
 
   return (
     <div id="container">
