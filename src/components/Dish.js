@@ -8,9 +8,7 @@ import React, {useState} from "react";
 
 function Dish(props) {
 
-const [countClick,setCountClick]=useState(0);
-const [q,setq]=useState(1);
-
+  const [isAddedToCart,setisAddedToCart]=useState(false);
   const addToCart = () => {
     // const requestOptions = {
     //   method: "POST",
@@ -25,18 +23,29 @@ const [q,setq]=useState(1);
 
     // fetch("/addToCart", requestOptions).then((response) => response.json());
     // props.onAddCart();
-    setq((prevq) => {
-      return (prevq+1);
-    });
-
-    const addproduct = {
+    if(!isAddedToCart){
+      const addproduct = {
       id: props.id,
       name: props.name,
       price: props.price,
       imgUrl: props.imgUrl,
-      q:q
+      q:1,
+      new:true
+    } 
+    setisAddedToCart(true)
+    return props.onAddCart(addproduct)
     }
-    props.onAddCart(addproduct)
+
+    else{
+      const addproduct={
+        id: props.id,
+        new:false
+      }
+      return props.onAddCart(addproduct)
+    }
+
+    
+ 
   };
 
   return (

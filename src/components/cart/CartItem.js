@@ -1,5 +1,10 @@
 import "./CartItem.css";
 const CartItem = (props) => {
+
+  const deleteFromCart =()=>{
+    props.deleteFromCart(props.id)
+  }
+
   return (
     <div>
       <div className="containerCartItem">
@@ -13,7 +18,7 @@ const CartItem = (props) => {
         <div className="price_item">
           <h1 className="expense-item__price">{props.price * props.q + "₪"}</h1>
         </div>
-        <button className="delete-btn">
+        <button className="delete-btn" onClick={deleteFromCart}>
           <span className="buy">delete </span>
         </button>
       </div>

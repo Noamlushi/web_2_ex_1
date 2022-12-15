@@ -26,6 +26,10 @@ const Cart = (props) => {
   //     });
   // }, []);
 
+  const deleteFromCart=(id)=>{
+    props.deleteFromCart(id)
+  }
+
 
   const saveDataUser=(savedData)=>{
     const requestOptions = {
@@ -42,12 +46,16 @@ const Cart = (props) => {
     fetch("/updateUserData", requestOptions).then((response) => response.json());
   }
 
+  console.log(props.items)
   return (
     <div>
       <div className="containerCart">
         <DetailsCart onSaveData={saveDataUser} totalprice={total()}></DetailsCart>
         {/* {props.CartItem} */}
-        {props.items.map((item, index) => {
+
+        {props.items.filter((item)=>{
+          return item.q>0
+        }).map((item, index) => {
           return (
             <CartItem
               key={index}
@@ -55,9 +63,26 @@ const Cart = (props) => {
               price={item.price}
               imgUrl={item.imgUrl}
               q={item.q}
+              id={item.id}
+              deleteFromCart={deleteFromCart}
             />
           );
         })}
+
+
+        {/* {props.items.map((item, index) => {
+          return (
+            <CartItem
+              key={index}
+              name={item.name}
+              price={item.price}
+              imgUrl={item.imgUrl}
+              q={item.q}
+              id={item.id}
+              deleteFromCart={deleteFromCart}
+            />
+          );
+        })} */}
       </div>
     </div>
   );
