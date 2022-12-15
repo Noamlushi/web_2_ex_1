@@ -4,7 +4,7 @@ import React, { useState } from "react";
 const DetailsCart = (props) => {
   const [enteredFirstN, setEnteredFirstN] = useState("");
   const [enteredLastN, setEnteredLastN] = useState("");
-  const [enteredPhone, setEnteredPhone] = useState("");
+  const [enteredAddress, setEnteredAddress] = useState("");
 
   const firstNChangeHandler = (event) => {
     setEnteredFirstN(event.target.value);
@@ -14,8 +14,8 @@ const DetailsCart = (props) => {
     setEnteredLastN(event.target.value);
   };
 
-  const phoneChangeHandler = (event) => {
-    setEnteredPhone(event.target.value);
+  const addressChangeHandler = (event) => {
+    setEnteredAddress(event.target.value);
   };
 
   const submitHandler = (event) => {
@@ -26,21 +26,21 @@ const DetailsCart = (props) => {
       return
     }
 
-    if(enteredFirstN==="" || enteredLastN==="" || enteredPhone==="" ){
+    if(enteredFirstN==="" || enteredLastN==="" || enteredAddress==="" ){
       alert("All fields must be filled")
       return
     }
-
-    const savedData = {
+    
+      const savedData = {
       firstN: enteredFirstN,
       lastN: enteredLastN,
-      phone: enteredPhone,
+      address: enteredAddress,
     };
     props.onSaveData(savedData);
 
     setEnteredFirstN("");
     setEnteredLastN("");
-    setEnteredPhone("");
+    setEnteredAddress("");
   };
 
   return (
@@ -69,11 +69,11 @@ const DetailsCart = (props) => {
           </div>
           <div className="question">
             <br></br>
-            <label>Phon Number</label>
+            <label>Address</label>
             <input
               type="text"
-              value={enteredPhone}
-              onChange={phoneChangeHandler}
+              value={enteredAddress}
+              onChange={addressChangeHandler}
               required
             />
           </div>

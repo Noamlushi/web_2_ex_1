@@ -31,7 +31,7 @@ const Cart = (props) => {
       body: JSON.stringify({
         firstN: savedData.firstN,
         lastN: savedData.lastN,
-        phone: savedData.phone,
+        address: savedData.address,
         totalprice:total()
       }),
     };
