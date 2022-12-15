@@ -1,25 +1,42 @@
 import "./Dish.css";
+import React, {useState} from "react";
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 ></link>;
-// import React, {useState} from "react";
+
 
 function Dish(props) {
-  const addToCart = () => {
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        id: props.id,
-        name: props.name,
-        price: props.price,
-        imgUrl: props.imgUrl,
-      }),
-    };
 
-    fetch("/addToCart", requestOptions).then((response) => response.json());
-    props.onAddCart();
+const [countClick,setCountClick]=useState(0);
+const [q,setq]=useState(1);
+
+  const addToCart = () => {
+    // const requestOptions = {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({
+    //     id: props.id,
+    //     name: props.name,
+    //     price: props.price,
+    //     imgUrl: props.imgUrl,
+    //   }),
+    // };
+
+    // fetch("/addToCart", requestOptions).then((response) => response.json());
+    // props.onAddCart();
+    setq((prevq) => {
+      return (prevq+1);
+    });
+
+    const addproduct = {
+      id: props.id,
+      name: props.name,
+      price: props.price,
+      imgUrl: props.imgUrl,
+      q:q
+    }
+    props.onAddCart(addproduct)
   };
 
   return (

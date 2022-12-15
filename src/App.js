@@ -6,6 +6,23 @@ import React, { useState, useEffect } from "react";
 
 function App() {
   const [backendData, setBackendData] = useState([{}]);
+  const [CartItems,setCartItems]=useState([]);
+
+  const addToCartItem=(new_item)=>{
+    if(new_item.q===1){
+      return setCartItems([...CartItems,new_item]);
+    }
+    else{
+      const newState = CartItems.map(item => {
+      if (item.id === new_item.id) {
+        return {...item, q: new_item.q};
+      }
+      return item;
+    });
+     return setCartItems(newState); 
+    }
+  }
+
 
   useEffect(() => {
     fetch("/alldishes")
@@ -21,9 +38,9 @@ function App() {
     setIsClickCart(!isClickCart);
   };
 
-  const renderCart = () => {
-    setIsClickCart(0);
-  };
+  // const renderCart = () => {
+  //   setIsClickCart(0);
+  // };
 
   return (
     <div>
@@ -33,7 +50,7 @@ function App() {
         alt=""
         onClick={openCart}
       />
-      {isClickCart && <Cart></Cart>}
+      {isClickCart && <Cart items={CartItems}></Cart>}
       <div className="title">
         <h1>React Restaurant</h1>
       </div>
@@ -48,7 +65,7 @@ function App() {
             imgUrl={dish.URL}
             description={dish.Description}
             id={dish._id}
-            onAddCart={renderCart}
+            onAddCart={addToCartItem}
           />
         );
       })}

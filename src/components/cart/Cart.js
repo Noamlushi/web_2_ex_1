@@ -4,23 +4,27 @@ import DetailsCart from "./DetailsCart";
 import React, { useState, useEffect } from "react";
 
 const Cart = (props) => {
-  const [backendCartData, setBackendCartData] = useState([]);
-
+ 
   const total=()=>{
     var total = 0;
-    backendCartData.forEach(((item)=>{
+    if(props.items.length===0)
+    return 0;
+    else{
+     props.items.forEach(((item)=>{
               total+=(item.price*item.q)
     }))
-    return total;
+    return total; 
+    }
+    
   }
     
-    useEffect(() => {
-    fetch("/allcart")
-      .then((response) => response.json())
-      .then((data) => {
-        setBackendCartData(data);
-      });
-  }, []);
+  //   useEffect(() => {
+  //   fetch("/allcart")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setBackendCartData(data);
+  //     });
+  // }, []);
 
 
   const saveDataUser=(savedData)=>{
@@ -42,7 +46,8 @@ const Cart = (props) => {
     <div>
       <div className="containerCart">
         <DetailsCart onSaveData={saveDataUser} totalprice={total()}></DetailsCart>
-        {backendCartData.map((item, index) => {
+        {/* {props.CartItem} */}
+        {props.items.map((item, index) => {
           return (
             <CartItem
               key={index}
