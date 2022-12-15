@@ -10,19 +10,6 @@ function Dish(props) {
 
   const [isAddedToCart,setisAddedToCart]=useState(false);
   const addToCart = () => {
-    // const requestOptions = {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({
-    //     id: props.id,
-    //     name: props.name,
-    //     price: props.price,
-    //     imgUrl: props.imgUrl,
-    //   }),
-    // };
-
-    // fetch("/addToCart", requestOptions).then((response) => response.json());
-    // props.onAddCart();
     if(!isAddedToCart){
       const addproduct = {
       id: props.id,
@@ -43,9 +30,6 @@ function Dish(props) {
       }
       return props.onAddCart(addproduct)
     }
-
-    
- 
   };
 
   return (
@@ -71,10 +55,6 @@ function Dish(props) {
         <h1>{props.name}</h1>
         <div className="control">
           <button className="btn" onClick={addToCart}>
-            {/* <span className="price">{props.price + "₪"}</span> */}
-            {/* <span className="shopping-cart"> */}
-            {/* <i className="fa fa-shopping-cart" aria-hidden="true"></i> */}
-            {/* </span> */}
             <span className="buy">Add to cart</span>
           </button>
         </div>
@@ -82,10 +62,7 @@ function Dish(props) {
 
         <h1 className="expense-item__price">{props.price + "₪"}</h1>
         <p></p>
-        {/* <button>Buy Now</button> */}
       </div>
-
-      {/* <div className='expense-item__price'>${props.amount}</div> */}
     </div>
   );
 }

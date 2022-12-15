@@ -68,9 +68,7 @@ function App() {
     setIsClickCart(1)
   }
 
-  // const renderCart = () => {
-  //   setIsClickCart(0);
-  // };
+
 
   return (
     <div>

@@ -1,7 +1,6 @@
 import "./Cart.css";
 import CartItem from "./CartItem";
 import DetailsCart from "./DetailsCart";
-// import React, { useState, useEffect } from "react";
 
 const Cart = (props) => {
  
@@ -18,13 +17,6 @@ const Cart = (props) => {
     
   }
     
-  //   useEffect(() => {
-  //   fetch("/allcart")
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setBackendCartData(data);
-  //     });
-  // }, []);
 
   const deleteFromCart=(id)=>{
     props.deleteFromCart(id)
@@ -68,21 +60,6 @@ const Cart = (props) => {
             />
           );
         })}
-
-
-        {/* {props.items.map((item, index) => {
-          return (
-            <CartItem
-              key={index}
-              name={item.name}
-              price={item.price}
-              imgUrl={item.imgUrl}
-              q={item.q}
-              id={item.id}
-              deleteFromCart={deleteFromCart}
-            />
-          );
-        })} */}
       </div>
     </div>
   );
