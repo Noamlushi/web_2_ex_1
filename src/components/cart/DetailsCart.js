@@ -20,9 +20,16 @@ const DetailsCart = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log({ enteredFirstN });
-    console.log({ enteredLastN });
-    console.log({ enteredPhone });
+
+    if(props.totalprice===0){
+      alert("Add items before payment")
+      return
+    }
+
+    if(enteredFirstN==="" || enteredLastN==="" || enteredPhone==="" ){
+      alert("All fields must be filled")
+      return
+    }
 
     const savedData = {
       firstN: enteredFirstN,
