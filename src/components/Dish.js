@@ -1,34 +1,30 @@
 import "./Dish.css";
-import React, {useState} from "react";
+import React, { useState } from "react";
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 ></link>;
 
-
 function Dish(props) {
-
-  const [isAddedToCart,setisAddedToCart]=useState(false);
+  const [isAddedToCart, setisAddedToCart] = useState(false);
   const addToCart = () => {
-    if(!isAddedToCart){
+    if (!isAddedToCart) {
       const addproduct = {
-      id: props.id,
-      name: props.name,
-      price: props.price,
-      imgUrl: props.imgUrl,
-      q:1,
-      new:true
-    } 
-    setisAddedToCart(true)
-    return props.onAddCart(addproduct)
-    }
-
-    else{
-      const addproduct={
         id: props.id,
-        new:false
-      }
-      return props.onAddCart(addproduct)
+        name: props.name,
+        price: props.price,
+        imgUrl: props.imgUrl,
+        q: 1,
+        new: true,
+      };
+      setisAddedToCart(true);
+      return props.onAddCart(addproduct);
+    } else {
+      const addproduct = {
+        id: props.id,
+        new: false,
+      };
+      return props.onAddCart(addproduct);
     }
   };
 
@@ -36,7 +32,7 @@ function Dish(props) {
     <div id="container">
       <div className="product-image">
         <img className="postcard__img" alt="" src={props.imgUrl}></img>
-        <div class="info">
+        <div className="info">
           <h2> Description</h2>
           <ul>
             <li>
