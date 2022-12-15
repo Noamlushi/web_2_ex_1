@@ -33,7 +33,6 @@ const DetailsCart = (props) => {
       lastN: enteredLastN,
       phone: enteredPhone,
     };
-
     props.onSaveData(savedData);
 
     setEnteredFirstN('');

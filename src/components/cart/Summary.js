@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
 import "./Summary.css";
 const Summary = (props) => {
   return (
     <div>
       <div className="containerSummary">
-        <h1>Thank you {}</h1>
-        <h1>Hope you enjoy the meal! {}</h1>
-        <h1>you paid {}</h1>
+        <h1>Thank you for your purchase!</h1>
+          <h1>Hope you enjoy the meal</h1>
+        <button type="submit" onClick={props.BuyAgin} className="btn">
+          <span className="buy">Buy Again!!</span>
+        </button>
       </div>
     </div>
   );

@@ -51,8 +51,22 @@ function App() {
     });
      return setCartItems(newState); 
   }
+  
+  const [isSummeryOpen, setIsSummeryOpen] = useState(0);
 
+  const EndOfPurchase=()=>{
+    const newState = CartItems.map(item => {
+        return {...item, q: 0};
+      });
+    setCartItems(newState); 
+    setIsSummeryOpen(1)
+    setIsClickCart(0)
+  }
 
+  const BuyAgin=()=>{
+    setIsSummeryOpen(0)
+    setIsClickCart(1)
+  }
 
   // const renderCart = () => {
   //   setIsClickCart(0);
@@ -66,11 +80,12 @@ function App() {
         alt=""
         onClick={openCart}
       />
-      {isClickCart && <Cart items={CartItems} deleteFromCart={deleteFromCart}></Cart>}
+      {isSummeryOpen && <Summary BuyAgin={BuyAgin} ></Summary>}
+      {isClickCart && <Cart items={CartItems} deleteFromCart={deleteFromCart} EndOfPurchase={EndOfPurchase}></Cart>}
       <div className="title">
         <h1>React Restaurant</h1>
       </div>
-      {/* <Summary></Summary> */}
+      
       {backendData.map((dish, index) => {
         return (
           <Dish

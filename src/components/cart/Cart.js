@@ -1,7 +1,7 @@
 import "./Cart.css";
 import CartItem from "./CartItem";
 import DetailsCart from "./DetailsCart";
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
 
 const Cart = (props) => {
  
@@ -32,6 +32,7 @@ const Cart = (props) => {
 
 
   const saveDataUser=(savedData)=>{
+    props.EndOfPurchase();
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -42,7 +43,6 @@ const Cart = (props) => {
         totalprice:total()
       }),
     };
-
     fetch("/updateUserData", requestOptions).then((response) => response.json());
   }
 
